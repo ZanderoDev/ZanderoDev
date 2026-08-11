@@ -226,9 +226,34 @@ Shell
 
 📊 GitHub Statistics
 
-<p align="center"><img height="170" src="https://github-readme-stats.vercel.app/api?username=ZanderoDev&show_icons=true&theme=tokyonight&hide_border=true&rank_icon=github"/><img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=ZanderoDev&layout=compact&theme=tokyonight&hide_border=true"/></p><p align="center">
-<img src="https://streak-stats.demolab.com?user=ZanderoDev&theme=tokyonight&hide_border=true"/>
-</p>---
+<p align="center">
+  <img
+    src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=ZanderoDev&theme=tokyonight"
+    width="100%"
+  />
+</p>
+
+<p align="center">
+  <img
+    src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=ZanderoDev&theme=tokyonight"
+    width="49%"
+  />
+  <img
+    src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=ZanderoDev&theme=tokyonight"
+    width="49%"
+  />
+</p>
+
+<p align="center">
+  <img
+    src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=ZanderoDev&theme=tokyonight"
+    width="49%"
+  />
+  <img
+    src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=ZanderoDev&theme=tokyonight&utcOffset=7"
+    width="49%"
+  />
+</p>
 
 📈 Contribution Graph
 
