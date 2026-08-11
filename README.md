@@ -1,118 +1,199 @@
-<div align="center">
+🐧 ZanderoDev
 
-# 👋 Hi, I'm ZanderoDev
+"Developer • Cybersecurity • CTF Player • Builder"
 
-### 💻 Software Engineer | 🚩 CTF Player
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f2027,50:203a43,100:2c5364&height=200&section=header&text=ZanderoDev&fontSize=55&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=Your%20weapon%20is%20your%20brain&descAlignY=60&descSize=20" width="100%"/><p align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=24&duration=3000&pause=1000&color=00FF9C&center=true&vCenter=true&width=750&lines=Your+weapon+is+your+brain.;Think.+Build.+Break.+Learn.;Code+is+a+tool.+Knowledge+is+the+power.;Welcome+to+my+digital+workspace." />
+</p><p align="center">
+  <img src="https://img.shields.io/badge/Linux-000000?style=for-the-badge&logo=linux&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Cybersecurity-111111?style=for-the-badge&logo=hackthebox&logoColor=9FEF00"/>
+  <img src="https://img.shields.io/badge/CTF-111111?style=for-the-badge&logo=tryhackme&logoColor=red"/>
+  <img src="https://img.shields.io/badge/Open%20Source-111111?style=for-the-badge&logo=opensourceinitiative&logoColor=white"/>
+</p>---
 
-*"Your brain is your weapon"*
+🧠 About Me
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&pause=1000&color=00FF00&center=true&vCenter=true&width=500&lines=Building+things+that+work.;Breaking+things+to+understand+them.;Your+brain+is+your+weapon." alt="Typing SVG" />
+<img align="right" width="350" src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif"/>I'm ZanderoDev, a developer who enjoys exploring the intersection of:
 
-</div>
+- 💻 Software Development
+- 🐧 Linux & Open Source
+- 🛡️ Cybersecurity
+- 🚩 Capture The Flag
+- 🤖 AI & Automation
+- 🌐 Web Development
+- 🔬 Reverse Engineering
+- ⚙️ Building weird things just to see how they work
 
----
+I like turning ideas → code,
+problems → experiments, and
+curiosity → knowledge.
 
-## 🧠 About Me
+<br clear="right"/>---
 
-- 💻 Programmer yang senang membangun sistem dari nol
-- 🚩 Bermain **CTF (Capture The Flag)** — reversing, exploitation, dan problem solving di bawah tekanan
-- 🔍 Percaya bahwa alat terbaik hacker maupun developer bukan software, tapi cara berpikir
-- 📚 Terus belajar, terus menguji — tidak ada klaim tanpa bukti
+⚡ "YOUR WEAPON IS YOUR BRAIN"
 
-> Ganti bagian ini dengan cerita singkatmu sendiri (fokus, minat, atau tujuan karier) supaya README ini benar-benar merepresentasikan kamu.
+«🧠 Your weapon is your brain.
 
----
+Tools are powerful.
+Code is powerful.
+Technology is powerful.
 
-## 🛠️ Tech Stack
+But the ability to think, understand, adapt, and solve problems is what makes them useful.»
 
-<div align="center">
-
-<!-- TODO: sesuaikan badge di bawah dengan tools/bahasa yang benar-benar kamu kuasai -->
-<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
-<img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white" />
-<img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black" />
-<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
-<img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" />
-<img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" />
-
-</div>
-
-> ⚠️ Badge di atas hanya contoh template. Silakan hapus/tambah sesuai stack yang benar-benar kamu pakai — README ini harus mencerminkan skill nyata, bukan daftar generik.
-
----
-
-## 🚩 CTF & Security
-
-- Aktif berlatih di kategori: *(isi kategori favoritmu — misalnya Web, Pwn, Reverse Engineering, Forensics, Crypto)*
-- Platform latihan: *(misalnya TryHackMe, HackTheBox, picoCTF — sesuaikan)*
-- Fokus saat ini: *(misalnya belajar binary exploitation, membangun tooling otomatisasi CTF, dll)*
-
----
-
-## 📊 GitHub Stats
-
-<div align="center">
-
-<img src="https://github-readme-stats.vercel.app/api?username=ZanderoDev&show_icons=true&theme=radical&hide_border=true" alt="GitHub Stats" height="165"/>
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=ZanderoDev&theme=radical&hide_border=true" alt="GitHub Streak" height="165"/>
-
-</div>
-
-<div align="center">
-
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ZanderoDev&layout=compact&theme=radical&hide_border=true" alt="Top Langs" />
-
-</div>
-
-> ℹ️ Widget stats di atas otomatis mengambil data asli dari akun GitHub `ZanderoDev` — pastikan username-nya sudah sesuai dengan username GitHub kamu yang sebenarnya, kalau berbeda, ganti di URL widget.
+     THINK
+       ↓
+    EXPLORE
+       ↓
+     BUILD
+       ↓
+     BREAK
+       ↓
+    ANALYZE
+       ↓
+     LEARN
+       ↓
+    IMPROVE
+       ↺
 
 ---
 
-## 📌 Pinned / Featured Projects
+🐧 Linux Environment
 
-<!-- TODO: isi dengan proyek publik yang benar-benar ingin kamu tampilkan.
-     Jangan cantumkan proyek yang bersifat privat. -->
-
-| Project | Deskripsi | Stack |
-|---|---|---|
-| *(nama proyek)* | *(deskripsi singkat, jujur, sesuai fungsi aslinya)* | *(tech stack)* |
-| *(nama proyek)* | *(deskripsi singkat, jujur, sesuai fungsi aslinya)* | *(tech stack)* |
-
----
-
-## 🌐 Connect With Me
-
-<div align="center">
-
-<!-- TODO: ganti link di bawah dengan akun asli kamu -->
-<a href="https://github.com/ZanderoDev"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" /></a>
-<a href="#"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
-<a href="#"><img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white" /></a>
-
-</div>
+<p align="center"><img src="https://skillicons.dev/icons?i=linux,bash,ubuntu,debian,docker,git,github,vim" /></p>╭──────────────────────────────────────────────────────────╮
+│                     ZANDERODEV OS                        │
+├──────────────────────────────────────────────────────────┤
+│ Kernel       : Linux                                     │
+│ Shell        : Bash / Zsh                                │
+│ Editor       : VS Code / Vim                             │
+│ Workflow     : Git + CLI                                 │
+│ Philosophy   : Learn → Build → Break → Improve           │
+╰──────────────────────────────────────────────────────────╯
 
 ---
 
-<div align="center">
+🛠️ Tech Stack
 
-### "Your brain is your weapon"
+💻 Languages
 
-![Profile Views](https://komarev.com/ghpvc/?username=ZanderoDev&color=brightgreen)
+<p align="center">
+<img src="https://skillicons.dev/icons?i=python,c,cpp,javascript,typescript,bash,html,css,sql" />
+</p>🌐 Web Development
 
-</div>
+<p align="center">
+<img src="https://skillicons.dev/icons?i=html,css,javascript,typescript,nodejs,nextjs,vite,react,tailwind" />
+</p>🗄️ Backend & Database
 
+<p align="center">
+<img src="https://skillicons.dev/icons?i=nodejs,express,postgres,mongodb,supabase,sqlite" />
+</p>🤖 AI & Automation
 
-<!--
-**ZanderoDev/ZanderoDev** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+<p align="center">
+<img src="https://skillicons.dev/icons?i=python,pytorch,tensorflow,docker" />
+</p>---
 
-Here are some ideas to get you started:
+🛡️ Cybersecurity
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+<p align="center"><img src="https://img.shields.io/badge/Web%20Security-111111?style=for-the-badge&logo=burpsuite&logoColor=FF6633"/>
+<img src="https://img.shields.io/badge/Linux-111111?style=for-the-badge&logo=linux&logoColor=FCC624"/>
+<img src="https://img.shields.io/badge/Networking-111111?style=for-the-badge&logo=cisco&logoColor=white"/>
+<img src="https://img.shields.io/badge/CTF-111111?style=for-the-badge&logo=hackthebox&logoColor=9FEF00"/></p>🔎 Areas I Explore
+
+🔥 Area| 🧪 Topics
+🌐 Web Security| SQLi, XSS, SSTI, SSRF, LFI, RCE
+🔐 Cryptography| Classical Crypto, RSA, Encoding
+🧩 Reverse Engineering| Binary Analysis, Ghidra, Debugging
+📡 Network Security| TCP/IP, Packet Analysis, Recon
+🧾 Forensics| File Analysis, Metadata, Memory
+🔍 OSINT| Information Gathering & Recon
+🚩 CTF| Web, Crypto, Rev, Forensics, Misc
+
+---
+
+🚀 Featured Projects
+
+<div align="center"><a href="https://github.com/YOUR_USERNAME/PROJECT-1">
+<img src="https://github-readme-stats.vercel.app/api/pin/?username=YOUR_USERNAME&repo=PROJECT-1&theme=tokyonight&hide_border=true"/>
+</a><a href="https://github.com/YOUR_USERNAME/PROJECT-2">
+<img src="https://github-readme-stats.vercel.app/api/pin/?username=YOUR_USERNAME&repo=PROJECT-2&theme=tokyonight&hide_border=true"/>
+</a></div>🔥 Things I Build
+
+🧠 AI Agents
+🛡️ Security Tools
+🌐 Web Applications
+⚙️ Automation Scripts
+🔬 Research Experiments
+🚩 CTF Tools & Writeups
+🎮 Game / Interactive Projects
+
+---
+
+📊 GitHub Stats
+
+<p align="center"><img height="170" src="https://github-readme-stats.vercel.app/api?username=YOUR_USERNAME&show_icons=true&theme=tokyonight&hide_border=true&rank_icon=github"/><img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=YOUR_USERNAME&layout=compact&theme=tokyonight&hide_border=true"/></p><p align="center"><img src="https://streak-stats.demolab.com?user=YOUR_USERNAME&theme=tokyonight&hide_border=true"/></p>---
+
+📈 Contribution Graph
+
+<p align="center">
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=YOUR_USERNAME&theme=tokyo-night&hide_border=true&area=true"/>
+</p>---
+
+🧰 Toolbox
+
+<p align="center"><img src="https://skillicons.dev/icons?i=git,github,docker,linux,bash,vscode,postman,cloudflare,vercel" /></p>🔧 Security Tools
+
+┌─────────────────────────────────────────────────┐
+│ 🔎 Nmap            → Network Recon              │
+│ 🕷️ Burp Suite      → Web Security              │
+│ ⚡ ffuf             → Web Fuzzing               │
+│ 💉 SQLMap           → SQL Injection Testing     │
+│ 🦈 Wireshark        → Packet Analysis           │
+│ 🧠 Ghidra           → Reverse Engineering       │
+│ 📡 Netcat           → Network Utility           │
+└─────────────────────────────────────────────────┘
+
+---
+
+🧪 Currently Exploring
+
+<p align="center"><img src="https://img.shields.io/badge/AI%20Agents-00FF9C?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/Linux%20Automation-00FF9C?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/CTF-00FF9C?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/Reverse%20Engineering-00FF9C?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/Web%20Security-00FF9C?style=for-the-badge"/></p>---
+
+🎯 Goals
+
+[██████████████████████████████] Learn more
+[█████████████████████████░░░░░] Build better
+[████████████████████████░░░░░░] Break smarter
+[███████████████████████░░░░░░░] Understand deeper
+[███████████████████░░░░░░░░░░░] Ship faster
+
+«The best tool isn't the one with the most features.
+It's the person who knows how to use it.»
+
+---
+
+🌐 Connect With Me
+
+<p align="center"><a href="https://github.com/YOUR_USERNAME">
+<img src="https://img.shields.io/badge/GitHub-111111?style=for-the-badge&logo=github&logoColor=white"/>
+</a><a href="https://discord.com">
+<img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white"/>
+</a><a href="mailto:YOUR_EMAIL">
+<img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white"/>
+</a><a href="https://YOUR_WEBSITE">
+<img src="https://img.shields.io/badge/Website-000000?style=for-the-badge&logo=google-chrome&logoColor=white"/>
+</a></p>---
+
+🐧 Final Message
+
+<p align="center">"Think. Build. Break. Learn."
+
+🧠 YOUR WEAPON IS YOUR BRAIN.
+
+<br><img src="https://capsule-render.vercel.app/api?type=waving&color=0:2c5364,50:203a43,100:0f2027&height=120&section=footer"/></p>---
+
+<p align="center">
+  <sub>⚡ ZanderoDev • Built with Linux, curiosity, and lots of debugging.</sub>
+</p>
