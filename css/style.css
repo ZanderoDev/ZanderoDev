@@ -1,7 +1,8 @@
 :root {
+  color-scheme: dark;
   --bg-dark: #070a12;
-  --bg-card: rgba(14, 21, 38, 0.75);
-  --bg-card-hover: rgba(22, 33, 62, 0.85);
+  --bg-card: #0d1527;
+  --bg-card-hover: #14203a;
   --border-color: rgba(0, 240, 255, 0.18);
   --border-glow: rgba(0, 240, 255, 0.55);
   --text-main: #f1f5f9;
@@ -30,6 +31,11 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  color-scheme: dark;
+}
+
+section {
+  scroll-margin-top: 85px;
 }
 
 body.cyber-theme {
@@ -115,9 +121,11 @@ body.cyber-theme {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(7, 10, 18, 0.85);
-  backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(0, 240, 255, 0.12);
+  background: #070a12;
+  background: rgba(7, 10, 18, 0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0, 240, 255, 0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
   transition: var(--transition-fast);
 }
 
@@ -238,17 +246,18 @@ body.cyber-theme {
 }
 
 .btn-secondary {
-  background: rgba(14, 23, 42, 0.9);
-  color: var(--text-main);
-  border: 1px solid var(--border-color);
-  backdrop-filter: blur(8px);
+  background: rgba(0, 240, 255, 0.08);
+  color: var(--accent-cyan);
+  border: 1px solid rgba(0, 240, 255, 0.4);
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.1);
 }
 
 .btn-secondary:hover {
   border-color: var(--accent-cyan);
-  background: rgba(0, 240, 255, 0.1);
-  color: var(--accent-cyan);
+  background: rgba(0, 240, 255, 0.2);
+  color: #ffffff;
   transform: translateY(-2px);
+  box-shadow: 0 0 25px rgba(0, 240, 255, 0.4);
 }
 
 .btn-outline-cyan {
@@ -277,7 +286,7 @@ body.cyber-theme {
 
 /* Hero Section */
 .hero-section {
-  padding: 5rem 1.5rem 4rem;
+  padding: 3rem 1.5rem 2.5rem;
   max-width: 1240px;
   margin: 0 auto;
   position: relative;
@@ -317,11 +326,13 @@ body.cyber-theme {
 }
 
 .hero-title {
-  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  color: #ffffff;
+  font-size: clamp(2.2rem, 5.5vw, 4.2rem);
   font-weight: 800;
-  line-height: 1.1;
+  line-height: 1.15;
   letter-spacing: -1px;
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
+  text-shadow: 0 0 25px rgba(255, 255, 255, 0.15);
 }
 
 .gradient-text {
@@ -393,14 +404,14 @@ body.cyber-theme {
 }
 
 .stat-card {
-  background: var(--bg-card);
-  backdrop-filter: blur(12px);
+  background: #0d1527;
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
-  padding: 1.5rem 1rem;
+  padding: 1.25rem 1rem;
   transition: var(--transition-smooth);
   position: relative;
   overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
 .stat-card::after {
