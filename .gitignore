@@ -1,0 +1,20 @@
+# System & Editor
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# Local screenshots & temp files
+screenshot_*.png
+temp_*.png
+*.log
+
+# Root duplicate raw PDFs (organized copies are in assets/pdf/)
+/Certificate - M.ilham Mufid.pdf
+/aguna.pdf
+/certified_certificate.pdf
+/dicoding.pdf
+/skilvul.pdf
+/vincoo.pdf

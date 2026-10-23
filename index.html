@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>M. Ilham Mufid — Cybersecurity Educator & Security Specialist</title>
+  <meta name="description" content="Portofolio Profesional M. Ilham Mufid — Bersertifikasi CCEP (Certified Cybersecurity Educator Professional), Network Security, Pentester, dan Systems Developer.">
+  <meta property="og:title" content="M. Ilham Mufid — Cybersecurity & Tech Portfolio">
+  <meta property="og:description" content="Koleksi sertifikasi resmi dan keahlian teknis M. Ilham Mufid dalam Information Security, Pentesting, Networking, dan Rekayasa Perangkat Lunak.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="cyber-theme">
+  <!-- Interactive Matrix Canvas Background -->
+  <canvas id="matrixCanvas"></canvas>
+  <div class="glow-orb orb-1"></div>
+  <div class="glow-orb orb-2"></div>
+  <div class="scanline-overlay"></div>
+
+  <!-- Navigation Bar -->
+  <header class="navbar-wrapper">
+    <nav class="nav-container">
+      <a href="#hero" class="nav-brand">
+        <span class="prompt-symbol">&gt;_</span>
+        <span class="brand-text">ILHAM<span class="accent-text">.SEC</span></span>
+        <span class="status-indicator" title="Status: Online & Ready"></span>
+      </a>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#about" class="nav-item"><i class="fa-solid fa-user-astronaut"></i> Profil</a>
+        <a href="#certificates" class="nav-item"><i class="fa-solid fa-certificate"></i> Sertifikasi</a>
+        <a href="#skills" class="nav-item"><i class="fa-solid fa-microchip"></i> Skills</a>
+        <a href="#verify" class="nav-item"><i class="fa-solid fa-shield-halved"></i> Verifikasi</a>
+        <a href="#terminal-section" class="nav-item"><i class="fa-solid fa-terminal"></i> Konsol</a>
+      </div>
+
+      <div class="nav-actions">
+        <button id="terminalToggleBtn" class="btn btn-outline-cyan btn-sm" title="Buka Interactive Terminal">
+          <i class="fa-solid fa-terminal"></i> <span class="hide-mobile">Terminal</span>
+        </button>
+        <button class="mobile-toggle" id="mobileMenuBtn" aria-label="Toggle navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero-section">
+    <div class="hero-container">
+      <div class="hero-badge-wrap">
+        <div class="cyber-badge pulse-badge">
+          <span class="badge-dot"></span>
+          <span>STATUS: TERSEDIA UNTUK SECURITY PROJECT & TRAINING</span>
+        </div>
+      </div>
+
+      <h1 class="hero-title">
+        M. ILHAM <span class="gradient-text">MUFID</span>
+      </h1>
+
+      <div class="hero-typing-box">
+        <span class="typing-label">role:~$</span>
+        <span id="typedText" class="typing-text"></span>
+        <span class="cursor-blink">_</span>
+      </div>
+
+      <p class="hero-description">
+        Praktisi keamanan siber bersertifikasi <strong>CCEP</strong> (Certified Cybersecurity Educator Professional). Fokus di bidang <em>Offensive Security</em>, analisis protokol jaringan TCP/IP, serta pengembangan software berbasis bahasa C &amp; web modern.
+      </p>
+
+      <div class="hero-cta-group">
+        <a href="#certificates" class="btn btn-primary">
+          <i class="fa-solid fa-shield-halved"></i> Jelajahi Sertifikat
+        </a>
+        <a href="#verify" class="btn btn-secondary">
+          <i class="fa-solid fa-qrcode"></i> Cek Keaslian ID
+        </a>
+        <a href="#terminal-section" class="btn btn-ghost">
+          <i class="fa-solid fa-terminal"></i> Launch Shell
+        </a>
+      </div>
+
+      <!-- Quick Stats Counter -->
+      <div class="hero-stats-grid">
+        <div class="stat-card">
+          <div class="stat-number" data-target="6">0</div>
+          <div class="stat-label">Kredensial Terverifikasi</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" data-target="100">0</div>
+          <span class="stat-unit">%</span>
+          <div class="stat-label">Validitas Resmi</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" data-target="4">0</div>
+          <div class="stat-label">Fokus Domain Siber</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" data-target="2026">2025</div>
+          <div class="stat-label">Aktif & Terbarui</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About / Bio Section -->
+  <section id="about" class="section-container">
+    <div class="section-header">
+      <div class="section-subtitle">&gt; PROFIL / WHOAMI</div>
+      <h2 class="section-title">Profil & Pendekatan Teknis</h2>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-card terminal-card">
+        <div class="card-bar">
+          <span class="circle red"></span>
+          <span class="circle yellow"></span>
+          <span class="circle green"></span>
+          <span class="terminal-title">~/profile/mufid.info</span>
+        </div>
+        <div class="terminal-body">
+          <p><span class="tok-comment">// Identitas & Pendekatan</span></p>
+          <p><span class="tok-key">const</span> <span class="tok-var">specialist</span> = {</p>
+          <p class="indent-1"><span class="tok-prop">name</span>: <span class="tok-str">"M. Ilham Mufid"</span>,</p>
+          <p class="indent-1"><span class="tok-prop">primaryTitle</span>: <span class="tok-str">"Certified Cybersecurity Educator Professional (CCEP)"</span>,</p>
+          <p class="indent-1"><span class="tok-prop">coreDomains</span>: [<span class="tok-str">"Red Teaming"</span>, <span class="tok-str">"InfoSec"</span>, <span class="tok-str">"Networking"</span>, <span class="tok-str">"Systems Dev"</span>],</p>
+          <p class="indent-1"><span class="tok-prop">mindset</span>: <span class="tok-str">"Offense informs defense; knowledge strengthens all"</span>,</p>
+          <p class="indent-1"><span class="tok-prop">status</span>: <span class="tok-str">"Active Researcher & Security Mentor"</span></p>
+          <p>};</p>
+        </div>
+      </div>
+
+      <div class="about-text-column">
+        <div class="feature-box">
+          <div class="feature-icon"><i class="fa-solid fa-user-shield"></i></div>
+          <div class="feature-content">
+            <h3>Offensive Security & Edukasi Siber</h3>
+            <p>Lulus ujian kredensial <strong>CCEP</strong> dari <em>Red Team Leaders</em>. Paham alur offensive security dan simulasi serangan, sekaligus terbiasa menyusun dan membagikan materi keamanan siber secara runtut.</p>
+          </div>
+        </div>
+
+        <div class="feature-box">
+          <div class="feature-icon"><i class="fa-solid fa-network-wired"></i></div>
+          <div class="feature-content">
+            <h3>Analisis Protokol Jaringan</h3>
+            <p>Menguasai struktur protokol 7 OSI Layer, handshake TCP/IP, subnetting IP, dan routing paket lewat sertifikasi <em>Aguna Course</em>. Fondasi penting untuk inspeksi paket data dan troubleshooting jaringan.</p>
+          </div>
+        </div>
+
+        <div class="feature-box">
+          <div class="feature-icon"><i class="fa-solid fa-code"></i></div>
+          <div class="feature-content">
+            <h3>Pemrograman C & Web Responsif</h3>
+            <p>Paham pengelolaan memori, pointer, dan logika algoritma bahasa C melalui kurikulum <em>Dicoding</em>, dipadukan kemampuan merancang tampilan web responsif modern menggunakan Bootstrap 5 dari <em>Skilvul</em>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certificates Section -->
+  <section id="certificates" class="section-container">
+    <div class="section-header">
+      <div class="section-subtitle">&gt; REPOSITORY / CREDENTIALS</div>
+      <h2 class="section-title">Portofolio Sertifikat Resmi</h2>
+      <p class="section-desc">Setiap sertifikat diverifikasi dengan ID unik dan dapat diinspeksi dokumen resminya secara langsung.</p>
+    </div>
+
+    <!-- Filter & Search Controls -->
+    <div class="cert-controls-bar">
+      <div class="filter-tabs" id="filterTabs">
+        <button class="filter-tab active" data-filter="all">Semua (6)</button>
+        <button class="filter-tab" data-filter="cybersecurity">Keamanan Siber (3)</button>
+        <button class="filter-tab" data-filter="networking">Jaringan (1)</button>
+        <button class="filter-tab" data-filter="dev">Pemrograman & Web (2)</button>
+      </div>
+
+      <div class="search-box">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" id="certSearchInput" placeholder="Cari sertifikat, skill, atau issuer..." autocomplete="off">
+        <button id="clearSearchBtn" class="clear-btn">&times;</button>
+      </div>
+    </div>
+
+    <!-- Certificate Cards Grid -->
+    <div class="certificates-grid" id="certificatesGrid">
+      <!-- Cards dynamically rendered or static fallback via JS -->
+    </div>
+  </section>
+
+  <!-- Interactive Credential Verifier -->
+  <section id="verify" class="section-container">
+    <div class="verification-box">
+      <div class="verify-header">
+        <div class="verify-badge"><i class="fa-solid fa-lock"></i> AUDIT ENGINE</div>
+        <h2>Cek Keaslian Sertifikat</h2>
+        <p>Ketik ID kredensial atau klik tombol contoh di bawah untuk memeriksa keabsahan sertifikat secara langsung.</p>
+      </div>
+
+      <div class="verify-input-group">
+        <input type="text" id="verifyInput" placeholder="Contoh: a88e7bcfe3a8824f, PKMI01104260716, 1OP8J5LEVPQK" autocomplete="off">
+        <button id="verifySubmitBtn" class="btn btn-primary">
+          <i class="fa-solid fa-check-double"></i> Verifikasi ID
+        </button>
+      </div>
+
+      <div class="quick-id-pills">
+        <span class="pill-label">Pilih ID contoh:</span>
+        <button class="quick-id-btn" data-id="a88e7bcfe3a8824f">CCEP (Red Team)</button>
+        <button class="quick-id-btn" data-id="PKMI01104260716">InfoSec (Cyber Army)</button>
+        <button class="quick-id-btn" data-id="VINCO-PENTEST-2026-0033-ADP">Pentester (Vinco)</button>
+        <button class="quick-id-btn" data-id="1OP8J5LEVPQK">C Prog (Dicoding)</button>
+        <button class="quick-id-btn" data-id="AC-128-56069449-51">Network (Aguna)</button>
+      </div>
+
+      <div id="verifyResult" class="verify-result-panel hidden">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Skills Section -->
+  <section id="skills" class="section-container">
+    <div class="section-header">
+      <div class="section-subtitle">&gt; CAPABILITIES / TECH_STACK</div>
+      <h2 class="section-title">Kemampuan & Tech Stack</h2>
+    </div>
+
+    <div class="skills-matrix-grid">
+      <!-- Skill Category 1 -->
+      <div class="skill-group-card">
+        <div class="skill-group-header">
+          <i class="fa-solid fa-user-ninja"></i>
+          <h3>Offensive & Pentesting</h3>
+        </div>
+        <div class="skill-items">
+          <div class="skill-item">
+            <div class="skill-info">
+              <span>Vulnerability Assessment</span>
+              <span class="skill-percent">Hands-on Lab</span>
+            </div>
+            <div class="skill-bar"><div class="bar-fill" style="width: 88%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info">
+              <span>Web & Network Reconnaissance</span>
+              <span class="skill-percent">Practical</span>
+            </div>
+            <div class="skill-bar"><div class="bar-fill" style="width: 85%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info">
+              <span>Red Team Fundamentals (CCEP)</span>
+              <span class="skill-percent">Certified CCEP</span>
+            </div>
+            <div class="skill-bar"><div class="bar-fill" style="width: 92%"></div></div>
+          </div>
+        </div>
+        <div class="skill-tags">
+          <span class="tag">Nmap</span>
+          <span class="tag">Burp Suite</span>
+          <span class="tag">Metasploit</span>
+          <span class="tag">Wireshark</span>
+        </div>
+      </div>
+
+      <!-- Skill Category 2 -->
+      <div class="skill-group-card">
+        <div class="skill-group-header">
+          <i class="fa-solid fa-shield-virus"></i>
+          <h3>Defense & InfoSec</h3>
+        </div>
+        <div class="skill-items">
+          <div class="skill-item">
+            <div class="skill-info">
+              <span>Information Security Fundamentals</span>
+              <span class="skill-percent">Certified</span>
+            </div>
+            <div class="skill-bar"><div class="bar-fill" style="width: 90%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info">
+              <span>Security Education & Mentoring</span>
+              <span class="skill-percent">Certified CCEP</span>
+            </div>
+            <div class="skill-bar"><div class="bar-fill" style="width: 94%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info">
+              <span>Threat Modeling & Controls</span>
+              <span class="skill-percent">Fundamental</span>
+            </div>
+            <div class="skill-bar"><div class="bar-fill" style="width: 82%"></div></div>
+          </div>
+        </div>
+        <div class="skill-tags">
+          <span class="tag">Cyber Academy</span>
+          <span class="tag">Threat Modeling</span>
+          <span class="tag">CIA Triad</span>
+          <span class="tag">Hardening</span>
+        </div>
+      </div>
+
+      <!-- Skill Category 3 -->
+      <div class="skill-group-card">
+        <div class="skill-group-header">
+          <i class="fa-solid fa-diagram-project"></i>
+          <h3>Networking & Infra</h3>
+        </div>
+        <div class="skill-items">
+          <div class="skill-item">
+            <div class="skill-info">
+              <span>TCP/IP & OSI Architecture</span>
+              <span class="skill-percent">Certified</span>
+            </div>
+            <div class="skill-bar"><div class="bar-fill" style="width: 90%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info">
+              <span>Subnetting & IP Routing (Aguna)</span>
+              <span class="skill-percent">Hands-on Lab</span>
+            </div>
+            <div class="skill-bar"><div class="bar-fill" style="width: 88%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info">
+              <span>Packet Capture & Traffic Analysis</span>
+              <span class="skill-percent">Practical</span>
+            </div>
+            <div class="skill-bar"><div class="bar-fill" style="width: 84%"></div></div>
+          </div>
+        </div>
+        <div class="skill-tags">
+          <span class="tag">TCP/UDP</span>
+          <span class="tag">DNS/DHCP</span>
+          <span class="tag">VLAN</span>
+          <span class="tag">Packet Flow</span>
+        </div>
+      </div>
+
+      <!-- Skill Category 4 -->
+      <div class="skill-group-card">
+        <div class="skill-group-header">
+          <i class="fa-solid fa-code-merge"></i>
+          <h3>Software & Web Dev</h3>
+        </div>
+        <div class="skill-items">
+          <div class="skill-item">
+            <div class="skill-info">
+              <span>C Language & Memory Logic (Dicoding)</span>
+              <span class="skill-percent">Certified Dicoding</span>
+            </div>
+            <div class="skill-bar"><div class="bar-fill" style="width: 86%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info">
+              <span>Responsive Web (Bootstrap 5 Skilvul)</span>
+              <span class="skill-percent">Certified CCEP</span>
+            </div>
+            <div class="skill-bar"><div class="bar-fill" style="width: 92%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info">
+              <span>Linux & Shell Scripting</span>
+              <span class="skill-percent">Practical</span>
+            </div>
+            <div class="skill-bar"><div class="bar-fill" style="width: 85%"></div></div>
+          </div>
+        </div>
+        <div class="skill-tags">
+          <span class="tag">C</span>
+          <span class="tag">Bash</span>
+          <span class="tag">HTML5/CSS3</span>
+          <span class="tag">Bootstrap 5</span>
+          <span class="tag">Git</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Cyber Terminal Section -->
+  <section id="terminal-section" class="section-container">
+    <div class="section-header">
+      <div class="section-subtitle">&gt; SHELL / COMMAND_CENTER</div>
+      <h2 class="section-title">Terminal Interaktif</h2>
+      <p class="section-desc">Ketik perintah shell seperti <code>help</code>, <code>certs</code>, <code>skills</code>, <code>verify</code>, <code>matrix</code>, atau <code>whoami</code>.</p>
+    </div>
+
+    <div class="terminal-window">
+      <div class="terminal-titlebar">
+        <div class="buttons">
+          <span class="btn-dot close"></span>
+          <span class="btn-dot min"></span>
+          <span class="btn-dot max"></span>
+        </div>
+        <span class="titlebar-label"><i class="fa-solid fa-terminal"></i> ilham@sec-ops: ~ (zsh)</span>
+        <div class="actions">
+          <button id="clearTerminalBtn" class="term-action-btn" title="Clear console"><i class="fa-solid fa-trash-can"></i></button>
+        </div>
+      </div>
+
+      <div class="terminal-screen" id="terminalScreen">
+        <div class="term-line output-line greeting">
+          <pre class="ascii-art">
+ ___ _    _  _   _   __  __   __  __ _   _ ___ ___ ___  
+|_ _| |  | || | /_\ |  \/  | |  \/  | | | | __|_ _|   \ 
+ | || |__| __ |/ _ \| |\/| | | |\/| | |_| | _| | || |) |
+|___|____|_||_/_/ \_\_|  |_| |_|  |_|\___/|_| |___|___/ 
+          </pre>
+          <div class="term-text">Terminal interaktif siap. Ketik perintah di bawah.</div>
+          <div class="term-text text-muted">Ketik <span class="term-cmd-highlight">help</span> untuk melihat daftar perintah.</div>
+        </div>
+      </div>
+
+      <div class="terminal-input-row">
+        <span class="term-prompt">guest@ilham-sec:~$</span>
+        <input type="text" id="terminalInput" class="term-input" autofocus autocomplete="off" spellcheck="false" placeholder="Ketik perintah...">
+      </div>
+    </div>
+  </section>
+
+  <!-- Certificate Detail Modal (Lightbox) -->
+  <div id="certModal" class="modal-overlay hidden">
+    <div class="modal-container">
+      <button class="modal-close" id="modalCloseBtn">&times;</button>
+      <div class="modal-content-grid">
+        <div class="modal-preview-col">
+          <div class="modal-image-wrap">
+            <img id="modalCertImg" src="" alt="Certificate Preview">
+          </div>
+        </div>
+        <div class="modal-info-col">
+          <div class="modal-badge-row">
+            <span id="modalCategoryBadge" class="modal-cat-badge">Cybersecurity</span>
+            <span class="modal-verified-badge"><i class="fa-solid fa-circle-check"></i> Verified</span>
+          </div>
+
+          <h3 id="modalCertTitle" class="modal-title">Judul Sertifikat</h3>
+          <p id="modalCertIssuer" class="modal-issuer">Penerbit Resmi</p>
+
+          <div class="modal-details-list">
+            <div class="detail-row">
+              <span class="detail-name">Tanggal Terbit:</span>
+              <span id="modalCertDate" class="detail-val"></span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-name">Credential ID:</span>
+              <span id="modalCertId" class="detail-val copyable" title="Klik untuk menyalin"></span>
+            </div>
+          </div>
+
+          <p id="modalCertDesc" class="modal-description"></p>
+
+          <div class="modal-tags" id="modalCertTags"></div>
+
+          <div class="modal-action-row">
+            <a id="modalVerifyBtn" href="#" target="_blank" rel="noopener" class="btn btn-primary btn-sm">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> Verifikasi Online
+            </a>
+            <a id="modalDownloadPdfBtn" href="#" download class="btn btn-outline-cyan btn-sm">
+              <i class="fa-solid fa-file-pdf"></i> Unduh PDF
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="brand-text">M. ILHAM <span class="accent-text">MUFID</span></span>
+          <p class="footer-tagline">Cybersecurity Educator • Penetration Testing • Network Architect • Systems C Dev</p>
+        </div>
+
+        <div class="footer-socials">
+          <a href="https://github.com/ZanderoDev" target="_blank" rel="noopener" class="social-link" title="GitHub">
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="https://linkedin.com/in/m-ilham-mufid" target="_blank" rel="noopener" class="social-link" title="LinkedIn">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+          <a href="mailto:xzvdeveloper@gmail.com" class="social-link" title="Email Kontak">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright">&copy; 2026 M. Ilham Mufid. Seluruh hak cipta dilindungi. Di-host via GitHub Pages.</p>
+        <p class="pgp-fingerprint"><i class="fa-solid fa-fingerprint"></i> SHA-256: 7f8a91b2c4e5...SECURE</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
