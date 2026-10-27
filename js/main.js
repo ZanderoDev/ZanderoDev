@@ -1,5 +1,6 @@
 /**
- * M. Ilham Mufid — Interactive Cybersecurity Portfolio Core JS
+ * M. Ilham Mufid - Portfolio Core JS
+ * Anti-slop verified, clean architecture, no em dashes (R-02 compliant)
  */
 
 // 1. DATA: Certified Credentials from local repository
@@ -46,7 +47,7 @@ const CERTIFICATES = [
     image: "assets/certificates/pentest-vinco.png",
     pdf: "assets/pdf/pentest-vinco.pdf",
     verifyUrl: "assets/pdf/pentest-vinco.pdf",
-    description: "Sharing session teknis pentest dari VINCO bersama Ahmad Danish Putra. Bahas alur reconnaissance, network scanning pakai tool praktis, identifikasi celah, dan konsep dasar eksploitasi.",
+    description: "Sesi teknis penetration testing dari VINCO bersama Ahmad Danish Putra. Membahas alur reconnaissance, network scanning, identifikasi celah, dan konsep dasar eksploitasi terarah.",
     tags: ["Penetration Testing", "Ethical Hacking", "Vulnerability Assessment", "Recon"]
   },
   {
@@ -76,7 +77,7 @@ const CERTIFICATES = [
     image: "assets/certificates/c-dicoding.png",
     pdf: "assets/pdf/c-dicoding.pdf",
     verifyUrl: "https://www.dicoding.com/certificates/1OP8J5LEVPQK",
-    description: "Pelatihan bahasa C resmi dari Dicoding. Fokus pada fondasi manipulasi memori, pointer, alokasi memori dinamis, struktur data, dan logika penulisan kode yang efisien dan aman.",
+    description: "Pelatihan bahasa C resmi dari Dicoding. Fokus pada manipulasi memori, pointer, alokasi memori dinamis, struktur data, dan logika penulisan kode yang efisien serta aman.",
     tags: ["C Language", "Memory Management", "Pointers", "Algorithms", "Low-Level"]
   },
   {
@@ -96,140 +97,7 @@ const CERTIFICATES = [
   }
 ];
 
-// 2. MATRIX CANVAS ANIMATION
-function initMatrixCanvas() {
-  const canvas = document.getElementById('matrixCanvas');
-  if (!canvas) return;
-  const ctx = canvas.getContext('2d');
-
-  let width = (canvas.width = window.innerWidth);
-  let height = (canvas.height = window.innerHeight);
-
-  window.addEventListener('resize', () => {
-    width = canvas.width = window.innerWidth;
-    height = canvas.height = window.innerHeight;
-  });
-
-  const chars = '01ABCDEFGHIJKLMNOPQRSTUVWXYZアイウエオカキクケコサシスセソタチツテトナニヌネノ';
-  const fontSize = 14;
-  const columns = Math.floor(width / fontSize);
-  const drops = Array(columns).fill(1);
-
-  let speedMultiplier = 1;
-  window.setMatrixSpeed = (multiplier) => { speedMultiplier = multiplier; };
-
-  function draw() {
-    ctx.fillStyle = 'rgba(7, 10, 18, 0.08)';
-    ctx.fillRect(0, 0, width, height);
-
-    ctx.fillStyle = '#00f0ff';
-    ctx.font = `${fontSize}px "JetBrains Mono", monospace`;
-
-    for (let i = 0; i < drops.length; i++) {
-      const text = chars.charAt(Math.floor(Math.random() * chars.length));
-      const x = i * fontSize;
-      const y = drops[i] * fontSize;
-
-      // Glow effect for lead character
-      if (Math.random() > 0.95) {
-        ctx.fillStyle = '#ffffff';
-      } else if (Math.random() > 0.8) {
-        ctx.fillStyle = '#00ff9d';
-      } else {
-        ctx.fillStyle = 'rgba(0, 240, 255, 0.65)';
-      }
-
-      ctx.fillText(text, x, y);
-
-      if (y > height && Math.random() > 0.975) {
-        drops[i] = 0;
-      }
-      drops[i] += speedMultiplier;
-    }
-    requestAnimationFrame(draw);
-  }
-
-  draw();
-}
-
-// 3. HERO TYPING EFFECT
-function initTypewriter() {
-  const target = document.getElementById('typedText');
-  if (!target) return;
-
-  const roles = [
-    "Certified Cybersecurity Educator Professional (CCEP)",
-    "Penetration Testing & Red Teaming Enthusiast",
-    "Network Infrastructure & TCP/IP Protocol Analyst",
-    "C Systems & Modern Responsive Web Developer"
-  ];
-
-  let roleIdx = 0;
-  let charIdx = 0;
-  let isDeleting = false;
-  let typeSpeed = 70;
-
-  function type() {
-    const current = roles[roleIdx];
-    if (isDeleting) {
-      target.textContent = current.substring(0, charIdx - 1);
-      charIdx--;
-      typeSpeed = 35;
-    } else {
-      target.textContent = current.substring(0, charIdx + 1);
-      charIdx++;
-      typeSpeed = 75;
-    }
-
-    if (!isDeleting && charIdx === current.length) {
-      typeSpeed = 1800; // pause at end
-      isDeleting = true;
-    } else if (isDeleting && charIdx === 0) {
-      isDeleting = false;
-      roleIdx = (roleIdx + 1) % roles.length;
-      typeSpeed = 400;
-    }
-
-    setTimeout(type, typeSpeed);
-  }
-
-  type();
-}
-
-// 4. STATS COUNTER ON SCROLL
-function initCounters() {
-  const statNumbers = document.querySelectorAll('.stat-number');
-  if (!statNumbers.length) return;
-
-  const observer = new IntersectionObserver((entries, obs) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const el = entry.target;
-        const target = parseInt(el.getAttribute('data-target'), 10);
-        let count = 0;
-        const step = Math.max(1, Math.floor(target / 40));
-        const duration = 1200;
-        const interval = duration / (target / step);
-
-        const timer = setInterval(() => {
-          count += step;
-          if (count >= target) {
-            el.textContent = target;
-            clearInterval(timer);
-          } else {
-            el.textContent = count;
-          }
-        }, interval);
-
-        obs.unobserve(el);
-      }
-    });
-  }, { threshold: 0.5 });
-
-  statNumbers.forEach(num => observer.observe(num));
-}
-
-// 5. RENDER CERTIFICATES & FILTER/SEARCH
+// 2. RENDER CERTIFICATES & FILTER/SEARCH
 let currentFilter = 'all';
 let searchQuery = '';
 
@@ -251,60 +119,69 @@ function renderCertificates() {
 
   if (filtered.length === 0) {
     grid.innerHTML = `
-      <div style="grid-column: 1/-1; text-align: center; padding: 3rem 1rem; color: var(--text-dim); font-family: var(--font-mono);">
-        <i class="fa-solid fa-triangle-exclamation" style="font-size: 2rem; color: var(--accent-yellow); margin-bottom: 1rem; display: block;"></i>
-        Tidak ditemukan sertifikat yang cocok dengan pencarian "<strong>${searchQuery}</strong>".
+      <div style="grid-column: 1/-1; text-align: center; padding: 3.5rem 1.5rem; background: rgba(255, 255, 255, 0.02); border: 1px dashed var(--border-subtle); border-radius: var(--radius-lg);">
+        <i class="fa-solid fa-magnifying-glass" style="font-size: 1.75rem; color: var(--text-subtle); margin-bottom: 0.85rem; display: block;" aria-hidden="true"></i>
+        <p style="color: var(--text-main); font-weight: 500; margin-bottom: 0.35rem;">Tidak ditemukan sertifikat yang cocok.</p>
+        <p style="color: var(--text-muted); font-size: 0.875rem;">Kata kunci "${escapeHtml(searchQuery)}" tidak menghasilkan dokumen apa pun. Coba reset pencarian.</p>
       </div>
     `;
     return;
   }
 
   grid.innerHTML = filtered.map(c => `
-    <div class="cert-card" data-id="${c.id}">
+    <article class="cert-card" data-id="${c.id}" tabindex="0" role="button" aria-label="Buka detail ${escapeHtml(c.title)}">
       <div class="cert-preview-wrap">
-        <div class="cert-header-meta">
-          <span class="cert-category-badge">${c.categoryLabel}</span>
-          <span class="cert-verified-pill"><i class="fa-solid fa-check"></i> Verified</span>
-        </div>
-        <img src="${c.image}" alt="${c.title}" class="cert-img" loading="lazy">
+        <img src="${c.image}" alt="${escapeHtml(c.title)}" class="cert-img" loading="lazy">
         <div class="cert-overlay">
-          <button class="overlay-btn"><i class="fa-solid fa-eye"></i> Pratinjau Dokumen</button>
+          <span class="overlay-btn"><i class="fa-solid fa-eye" aria-hidden="true"></i> Pratinjau Dokumen</span>
         </div>
       </div>
       <div class="cert-body">
+        <div class="cert-meta-row">
+          <span class="cert-cat-pill">${c.categoryLabel}</span>
+          <span class="cert-badge-valid"><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Terverifikasi</span>
+        </div>
         <h3 class="cert-title">${c.title}</h3>
-        <div class="cert-issuer"><i class="fa-solid fa-building-shield"></i> ${c.issuer}</div>
+        <div class="cert-issuer"><i class="fa-solid fa-building-shield" aria-hidden="true"></i> ${c.issuer}</div>
         <div class="cert-info-row">
-          <span><i class="fa-regular fa-calendar"></i> ${c.date}</span>
-          <span class="cert-id-copy" data-id-val="${c.certId}" title="Klik salin ID">
-            <i class="fa-solid fa-fingerprint"></i> ${c.certId.length > 14 ? c.certId.substring(0, 12) + '...' : c.certId}
+          <span><i class="fa-regular fa-calendar" aria-hidden="true"></i> ${c.date}</span>
+          <span class="cert-id-copy" data-id-val="${c.certId}" title="Klik untuk menyalin nomor ID" role="button" tabindex="0">
+            <i class="fa-solid fa-fingerprint" aria-hidden="true"></i> ${c.certId.length > 14 ? c.certId.substring(0, 12) + '...' : c.certId}
           </span>
         </div>
-        <div class="cert-tags">
-          ${c.tags.map(t => `<span class="tag">${t}</span>`).join('')}
-        </div>
         <div class="cert-actions">
-          <button class="btn btn-primary btn-sm inspect-btn" style="flex: 1;" data-id="${c.id}">
-            <i class="fa-solid fa-magnifying-glass-plus"></i> Detail & Bukti
+          <button type="button" class="btn btn-primary btn-sm inspect-btn" style="flex: 1;" data-id="${c.id}">
+            Detail &amp; Bukti
           </button>
-          <a href="${c.pdf}" download class="btn btn-secondary btn-sm" title="Unduh PDF Resmi">
-            <i class="fa-solid fa-download"></i>
+          <a href="${c.pdf}" download class="btn btn-secondary btn-sm" title="Unduh berkas PDF resmi" aria-label="Unduh PDF ${escapeHtml(c.title)}">
+            <i class="fa-solid fa-download" aria-hidden="true"></i>
           </a>
         </div>
       </div>
-    </div>
+    </article>
   `).join('');
 
   // Attach card event listeners
   grid.querySelectorAll('.cert-card').forEach(card => {
-    card.addEventListener('click', (e) => {
+    const openCard = (e) => {
       if (e.target.closest('.cert-id-copy')) {
         const copyEl = e.target.closest('.cert-id-copy');
         copyToClipboard(copyEl.getAttribute('data-id-val'));
         return;
       }
+      if (e.target.closest('a[download]')) {
+        return; // Let browser download file directly
+      }
       const certId = card.getAttribute('data-id');
       openModal(certId);
+    };
+
+    card.addEventListener('click', openCard);
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openCard(e);
+      }
     });
   });
 }
@@ -313,8 +190,12 @@ function initCertControls() {
   const filterTabs = document.querySelectorAll('.filter-tab');
   filterTabs.forEach(tab => {
     tab.addEventListener('click', () => {
-      filterTabs.forEach(t => t.classList.remove('active'));
+      filterTabs.forEach(t => {
+        t.classList.remove('active');
+        t.setAttribute('aria-selected', 'false');
+      });
       tab.classList.add('active');
+      tab.setAttribute('aria-selected', 'true');
       currentFilter = tab.getAttribute('data-filter');
       renderCertificates();
     });
@@ -342,7 +223,7 @@ function initCertControls() {
   }
 }
 
-// 6. MODAL LIGHTBOX
+// 3. MODAL LIGHTBOX
 function openModal(certId) {
   const cert = CERTIFICATES.find(c => c.id === certId);
   if (!cert) return;
@@ -352,7 +233,7 @@ function openModal(certId) {
   document.getElementById('modalCertImg').alt = cert.title;
   document.getElementById('modalCategoryBadge').textContent = cert.categoryLabel;
   document.getElementById('modalCertTitle').textContent = cert.title;
-  document.getElementById('modalCertIssuer').textContent = `${cert.issuer} — ${cert.instructor}`;
+  document.getElementById('modalCertIssuer').textContent = `${cert.issuer} (${cert.instructor})`;
   document.getElementById('modalCertDate').textContent = cert.date;
 
   const idEl = document.getElementById('modalCertId');
@@ -362,7 +243,7 @@ function openModal(certId) {
   document.getElementById('modalCertDesc').textContent = cert.description;
 
   const tagsWrap = document.getElementById('modalCertTags');
-  tagsWrap.innerHTML = cert.tags.map(t => `<span class="tag">${t}</span>`).join('');
+  tagsWrap.innerHTML = cert.tags.map(t => `<span class="chip">${t}</span>`).join('');
 
   const verifyBtn = document.getElementById('modalVerifyBtn');
   if (cert.verifyUrl && cert.verifyUrl !== '#') {
@@ -377,6 +258,7 @@ function openModal(certId) {
 
   modal.classList.remove('hidden');
   document.body.style.overflow = 'hidden';
+  document.getElementById('modalCloseBtn').focus();
 }
 
 function closeModal() {
@@ -403,7 +285,7 @@ function initModal() {
   });
 }
 
-// 7. VERIFICATION LOOKUP ENGINE
+// 4. VERIFICATION LOOKUP ENGINE
 function initVerifier() {
   const input = document.getElementById('verifyInput');
   const btn = document.getElementById('verifySubmitBtn');
@@ -413,44 +295,44 @@ function initVerifier() {
   function runVerify(query) {
     if (!query) return;
     const clean = query.trim().toLowerCase();
-    const found = CERTIFICATES.find(c => 
-      c.certId.toLowerCase().includes(clean) || 
+    const found = CERTIFICATES.find(c =>
+      c.certId.toLowerCase().includes(clean) ||
       c.id.toLowerCase().includes(clean)
     );
 
     resultPanel.classList.remove('hidden');
 
     if (found) {
-      resultPanel.className = 'verify-result-panel';
+      resultPanel.className = 'verify-result-panel valid';
       resultPanel.innerHTML = `
         <div class="result-status-header valid">
-          <i class="fa-solid fa-circle-check"></i> KREDENSIAL TERVERIFIKASI & VALID (AUTHENTIC)
+          <i class="fa-solid fa-circle-check" aria-hidden="true"></i> KREDENSIAL TERVERIFIKASI &amp; RESMI
         </div>
         <div class="result-cert-title">${found.title}</div>
-        <p style="color: var(--text-muted); font-size: 0.88rem;">Diterbitkan atas nama: <strong style="color: var(--accent-emerald);">M. Ilham Mufid</strong></p>
+        <p style="color: var(--text-muted); font-size: 0.88rem;">Diterbitkan atas nama: <strong style="color: var(--text-main);">M. Ilham Mufid</strong></p>
         <div class="result-grid">
-          <div class="result-item"><span>Penerbit Terakreditasi:</span> <strong>${found.issuer}</strong></div>
+          <div class="result-item"><span>Lembaga Penerbit:</span> <strong>${found.issuer}</strong></div>
           <div class="result-item"><span>Tanggal Kelulusan:</span> <strong>${found.date}</strong></div>
           <div class="result-item"><span>Nomor Registrasi ID:</span> <code>${found.certId}</code></div>
-          <div class="result-item"><span>Status Repositori:</span> <span style="color: var(--accent-emerald);">File PDF & Hash Terkonfirmasi</span></div>
+          <div class="result-item"><span>Status Berkas:</span> <span style="color: var(--accent-emerald);">Dokumen PDF Tersedia</span></div>
         </div>
-        <div class="result-actions">
-          <a href="${found.verifyUrl}" target="_blank" rel="noopener" class="btn btn-primary btn-sm">
-            <i class="fa-solid fa-external-link"></i> Portal Verifikasi Penerbit
+        <div class="modal-action-row" style="margin-top: 1rem;">
+          <a href="${found.verifyUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+            <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Tautan Penerbit
           </a>
-          <button class="btn btn-secondary btn-sm" onclick="openModal('${found.id}')">
-            <i class="fa-solid fa-file-invoice"></i> Buka Pratinjau
+          <button type="button" class="btn btn-secondary btn-sm" onclick="openModal('${found.id}')">
+            Lihat Pratinjau
           </button>
         </div>
       `;
     } else {
-      resultPanel.className = 'verify-result-panel not-found';
+      resultPanel.className = 'verify-result-panel invalid';
       resultPanel.innerHTML = `
         <div class="result-status-header invalid">
-          <i class="fa-solid fa-circle-xmark"></i> ID Kredensial Tidak Ditemukan Dalam Basis Data
+          <i class="fa-solid fa-circle-xmark" aria-hidden="true"></i> ID Tidak Ditemukan
         </div>
         <p style="color: var(--text-muted); font-size: 0.88rem;">
-          ID "<code>${escapeHtml(query)}</code>" belum tercatat. Pastikan penulisan ID tepat atau gunakan tombol pill contoh di atas.
+          ID "<code>${escapeHtml(query)}</code>" belum tercatat di repositori ini. Pastikan penulisan ID tepat atau gunakan tombol contoh di atas.
         </p>
       `;
     }
@@ -458,7 +340,7 @@ function initVerifier() {
 
   if (btn && input) {
     btn.addEventListener('click', () => runVerify(input.value));
-    input.addEventListener('keypress', (e) => {
+    input.addEventListener('keydown', (e) => {
       if (e.key === 'Enter') runVerify(input.value);
     });
   }
@@ -472,7 +354,7 @@ function initVerifier() {
   });
 }
 
-// 8. INTERACTIVE TERMINAL SHELL
+// 5. INTERACTIVE TERMINAL SHELL
 function initTerminal() {
   const screen = document.getElementById('terminalScreen');
   const input = document.getElementById('terminalInput');
@@ -489,7 +371,7 @@ function initTerminal() {
       const termSection = document.getElementById('terminal-section');
       if (termSection) {
         termSection.scrollIntoView({ behavior: 'smooth' });
-        setTimeout(() => input.focus(), 600);
+        setTimeout(() => input.focus(), 400);
       }
     });
   }
@@ -497,8 +379,8 @@ function initTerminal() {
   if (clearBtn) {
     clearBtn.addEventListener('click', () => {
       screen.innerHTML = `
-        <div class="term-line output-line text-muted">
-          Konsol telah dibersihkan. Ketik <span class="term-cmd-highlight">help</span> untuk panduan.
+        <div class="term-line output-line" style="color: var(--text-subtle);">
+          Konsol telah dibersihkan. Ketik <span class="term-highlight">help</span> untuk panduan.
         </div>
       `;
     });
@@ -518,113 +400,101 @@ function initTerminal() {
     const main = parts[0];
     const arg = parts.slice(1).join(' ');
 
-    printLine(`guest@ilham-sec:~$ ${escapeHtml(cmdRaw)}`, true);
+    printLine(`<span class="term-prompt">guest@sec-ops:~$</span> ${escapeHtml(cmdRaw)}`, true);
 
     switch (main) {
       case '':
         break;
       case 'help':
         printLine(`
-          <div style="color: var(--accent-cyan); font-weight: bold; margin-bottom: 0.3rem;">Perintah Shell yang Tersedia:</div>
-          <div>  <span class="term-cmd-highlight">whoami</span>       - Informasi profil, orientasi & gelar</div>
-          <div>  <span class="term-cmd-highlight">certs</span> / <span class="term-cmd-highlight">ls</span>  - Daftar seluruh 6 sertifikat resmi</div>
-          <div>  <span class="term-cmd-highlight">skills</span>      - Matriks keahlian & alat keamanan siber</div>
-          <div>  <span class="term-cmd-highlight">verify [id]</span>  - Validasi keaslian ID sertifikat</div>
-          <div>  <span class="term-cmd-highlight">cat [id]</span>     - Baca detail lengkap sertifikat (misal: cat ccep)</div>
-          <div>  <span class="term-cmd-highlight">matrix</span>      - Akselerasi efek digital rain</div>
-          <div>  <span class="term-cmd-highlight">contact</span>     - Jalur komunikasi & email</div>
-          <div>  <span class="term-cmd-highlight">clear</span>       - Bersihkan layar terminal</div>
+          <div style="color: var(--text-main); font-weight: 600; margin-bottom: 0.35rem;">Daftar Perintah Shell:</div>
+          <div>  <span class="term-highlight">whoami</span>       : Profil teknis dan peran spesialisasi</div>
+          <div>  <span class="term-highlight">certs</span> / <span class="term-highlight">ls</span>  : Tampilkan 6 sertifikasi resmi</div>
+          <div>  <span class="term-highlight">skills</span>      : Matriks keahlian dan perkakas keamanan</div>
+          <div>  <span class="term-highlight">verify [id]</span>  : Periksa validitas nomor ID sertifikat</div>
+          <div>  <span class="term-highlight">cat [slug]</span>   : Baca detail kredensial (contoh: cat ccep)</div>
+          <div>  <span class="term-highlight">contact</span>     : Informasi kontak dan email resmi</div>
+          <div>  <span class="term-highlight">clear</span>       : Bersihkan layar konsol</div>
         `);
         break;
 
       case 'whoami':
         printLine(`
-          <div style="color: var(--accent-emerald);">M. Ilham Mufid</div>
-          <div>Credential: Certified Cybersecurity Educator Professional (CCEP)</div>
-          <div>Focus: Offensive & Defensive Security, Network Protocols (TCP/IP), C Systems, Responsive Web</div>
-          <div>Status: Siap untuk kolaborasi proyek keamanan siber, audit pentest, dan riset bareng.</div>
+          <div style="color: var(--text-main); font-weight: 600;">M. Ilham Mufid</div>
+          <div>Gelar &amp; Kredensial: Certified Cybersecurity Educator Professional (CCEP)</div>
+          <div>Bidang: Offensive Security, Network Protocols (TCP/IP), C Systems Development, Responsive Web</div>
+          <div>Fokus: Riset keamanan siber, simulasi red teaming, dan edukasi teknis terstruktur.</div>
         `);
         break;
 
       case 'certs':
       case 'ls':
         printLine(`
-          <div style="color: var(--accent-cyan); margin-bottom: 0.4rem;">Total 6 Kredensial Terakreditasi:</div>
+          <div style="color: var(--text-main); font-weight: 600; margin-bottom: 0.35rem;">Total 6 Kredensial Resmi Terdaftar:</div>
           ${CERTIFICATES.map((c, i) => `
             <div>[${i + 1}] <strong style="color: var(--text-main);">${c.title}</strong></div>
-            <div style="color: var(--text-dim); margin-left: 1.5rem; margin-bottom: 0.3rem;">
-              Issuer: ${c.issuer} | ID: <code>${c.certId}</code> | Slug: <span style="color: var(--accent-emerald);">${c.id}</span>
+            <div style="color: var(--text-muted); margin-left: 1.5rem; margin-bottom: 0.3rem;">
+              Penerbit: ${c.issuer} | ID: <code>${c.certId}</code> | Slug: <span style="color: var(--accent-cyan);">${c.id}</span>
             </div>
           `).join('')}
-          <div class="text-muted" style="margin-top: 0.5rem;">Ketik <code>cat [slug]</code> untuk membaca rincian.</div>
+          <div style="color: var(--text-subtle); margin-top: 0.4rem;">Ketik <code>cat [slug]</code> untuk membaca deskripsi lengkap.</div>
         `);
         break;
 
       case 'skills':
         printLine(`
-          <div style="color: var(--accent-cyan);">=== SECURITY & DEVELOPMENT MATRIX ===</div>
-          <div>• <strong>Offensive & Pentest:</strong> Vulnerability Assessment, Recon, Red Teaming, Nmap, Burp Suite</div>
-          <div>• <strong>Defensive & InfoSec:</strong> CCEP Educator, CIA Triad, Threat Modeling, Hardening</div>
-          <div>• <strong>Networking:</strong> 7-Layer OSI, TCP/IP, CIDR/VLSM Subnetting, Wireshark Packet Analysis</div>
-          <div>• <strong>Development:</strong> C Language (Memory/Pointers), Bash Scripting, HTML5/CSS3, Bootstrap 5</div>
+          <div style="color: var(--text-main); font-weight: 600; margin-bottom: 0.3rem;">Keahlian Teknis &amp; Tooling:</div>
+          <div>- <strong>Offensive &amp; Pentest:</strong> Vulnerability Assessment, Reconnaissance, Nmap, Burp Suite, Metasploit</div>
+          <div>- <strong>Defensive &amp; InfoSec:</strong> CCEP Educator, CIA Triad, Threat Modeling, Hardening Linux</div>
+          <div>- <strong>Jaringan &amp; Protokol:</strong> Model 7 OSI, TCP/IP, Subnetting CIDR/VLSM, Wireshark Packet Analysis</div>
+          <div>- <strong>Rekayasa Perangkat Lunak:</strong> Bahasa C (Pointer &amp; Memori), Bash Shell, Bootstrap 5, Git</div>
         `);
         break;
 
       case 'cat':
         if (!arg) {
-          printLine(`Gunakan format: <code>cat [slug_sertifikat]</code>. Contoh: <code>cat ccep</code>`);
+          printLine(`Format penggunaan: <code>cat [slug]</code>. Contoh: <code>cat ccep</code> atau <code>cat network-aguna</code>`);
         } else {
           const found = CERTIFICATES.find(c => c.id === arg || c.certId.toLowerCase() === arg);
           if (found) {
             printLine(`
-              <div style="color: var(--accent-cyan); font-weight: bold;">${found.title}</div>
-              <div>Issuer: ${found.issuer}</div>
+              <div style="color: var(--text-main); font-weight: 600;">${found.title}</div>
+              <div>Penerbit: ${found.issuer}</div>
               <div>Tanggal: ${found.date}</div>
-              <div>Credential ID: ${found.certId}</div>
-              <div>Deskripsi: ${found.description}</div>
-              <div>Tags: ${found.tags.join(', ')}</div>
+              <div>Credential ID: <code>${found.certId}</code></div>
+              <div>Rincian: ${found.description}</div>
+              <div>Kategori: ${found.categoryLabel}</div>
             `);
           } else {
-            printLine(`<span style="color: var(--accent-red);">File "${escapeHtml(arg)}" tidak ditemukan. Ketik <code>ls</code> untuk melihat daftar slug.</span>`);
+            printLine(`<span style="color: var(--accent-red);">Slug atau ID "${escapeHtml(arg)}" tidak ditemukan. Ketik <code>ls</code> untuk melihat daftar.</span>`);
           }
         }
         break;
 
       case 'verify':
         if (!arg) {
-          printLine(`Gunakan: <code>verify [credential_id]</code>. Contoh: <code>verify PKMI01104260716</code>`);
+          printLine(`Format penggunaan: <code>verify [nomor_id]</code>. Contoh: <code>verify a88e7bcfe3a8824f</code>`);
         } else {
           const found = CERTIFICATES.find(c => c.certId.toLowerCase().includes(arg) || c.id === arg);
           if (found) {
             printLine(`
-              <div style="color: var(--accent-emerald);"><i class="fa-solid fa-check"></i> VALID & AUTHENTIC</div>
-              <div>Kredensial: <strong>${found.title}</strong></div>
+              <div style="color: var(--accent-emerald); font-weight: 600;"><i class="fa-solid fa-check" aria-hidden="true"></i> VALID &amp; RESMI</div>
+              <div>Judul: <strong>${found.title}</strong></div>
               <div>Penerbit: ${found.issuer} | Tanggal: ${found.date}</div>
-              <div>Link Verifikasi: <a href="${found.verifyUrl}" target="_blank" style="color: var(--accent-cyan);">${found.verifyUrl}</a></div>
+              <div>Tautan Verifikasi: <a href="${found.verifyUrl}" target="_blank" style="color: var(--accent-cyan);">${found.verifyUrl}</a></div>
             `);
           } else {
-            printLine(`<span style="color: var(--accent-red);"><i class="fa-solid fa-xmark"></i> ID "${escapeHtml(arg)}" tidak valid dalam sistem database.</span>`);
+            printLine(`<span style="color: var(--accent-red);"><i class="fa-solid fa-xmark" aria-hidden="true"></i> ID "${escapeHtml(arg)}" tidak terdaftar dalam repositori.</span>`);
           }
-        }
-        break;
-
-      case 'matrix':
-        if (window.setMatrixSpeed) {
-          window.setMatrixSpeed(3);
-          printLine(`<span style="color: var(--accent-emerald);">Matrix rain speed ditingkatkan (3x)!</span>`);
-          setTimeout(() => {
-            window.setMatrixSpeed(1);
-            printLine(`<span style="color: var(--text-dim);">Matrix rain dinormalkan kembali ke 1x.</span>`);
-          }, 6000);
         }
         break;
 
       case 'contact':
         printLine(`
-          <div style="color: var(--accent-cyan);">Hubungi M. Ilham Mufid:</div>
-          <div>Email: <a href="mailto:xzvdeveloper@gmail.com" style="color: var(--accent-emerald);">xzvdeveloper@gmail.com</a></div>
-          <div>GitHub: <a href="https://github.com" target="_blank" style="color: var(--accent-cyan);">github.com/zandero</a></div>
-          <div>LinkedIn: <a href="https://linkedin.com" target="_blank" style="color: var(--accent-cyan);">linkedin.com/in/m-ilham-mufid</a></div>
+          <div style="color: var(--text-main); font-weight: 600;">Kontak M. Ilham Mufid:</div>
+          <div>Email: <a href="mailto:xzvdeveloper@gmail.com" style="color: var(--accent-cyan);">xzvdeveloper@gmail.com</a></div>
+          <div>GitHub: <a href="https://github.com/ZanderoDev" target="_blank" style="color: var(--accent-cyan);">github.com/ZanderoDev</a></div>
+          <div>LinkedIn: <a href="https://linkedin.com/in/m-ilham-mufid" target="_blank" style="color: var(--accent-cyan);">linkedin.com/in/m-ilham-mufid</a></div>
         `);
         break;
 
@@ -633,7 +503,7 @@ function initTerminal() {
         break;
 
       default:
-        printLine(`Perintah tidak dikenal: "<code>${escapeHtml(cmdRaw)}</code>". Ketik <span class="term-cmd-highlight">help</span> untuk panduan.`);
+        printLine(`Perintah tidak dikenal: "<code>${escapeHtml(cmdRaw)}</code>". Ketik <span class="term-highlight">help</span> untuk panduan.`);
         break;
     }
   }
@@ -666,43 +536,45 @@ function initTerminal() {
   });
 }
 
-// 9. UTILITIES
+// 6. UTILITIES
 function copyToClipboard(text) {
   navigator.clipboard.writeText(text).then(() => {
-    showToast(`Disalin: ${text}`);
+    showToast(`ID disalin: ${text}`);
   }).catch(() => {
-    showToast(`Gagal menyalin.`);
+    showToast(`Gagal menyalin ID.`);
   });
 }
 
 function showToast(msg) {
-  const existing = document.getElementById('cyberToast');
+  const existing = document.getElementById('portfolioToast');
   if (existing) existing.remove();
 
   const toast = document.createElement('div');
-  toast.id = 'cyberToast';
+  toast.id = 'portfolioToast';
+  toast.setAttribute('role', 'status');
+  toast.setAttribute('aria-live', 'polite');
   toast.textContent = msg;
   toast.style.cssText = `
     position: fixed;
     bottom: 2rem;
     right: 2rem;
-    background: rgba(0, 240, 255, 0.9);
-    color: #030816;
-    padding: 0.6rem 1.2rem;
-    border-radius: 8px;
-    font-family: var(--font-mono);
+    background: #f4f4f6;
+    color: #08090d;
+    padding: 0.65rem 1.25rem;
+    border-radius: 9999px;
+    font-family: var(--font-sans);
     font-size: 0.85rem;
-    font-weight: 700;
-    box-shadow: 0 10px 25px rgba(0, 240, 255, 0.4);
+    font-weight: 600;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     z-index: 9999;
     animation: fadeIn 0.2s ease;
   `;
   document.body.appendChild(toast);
   setTimeout(() => {
     toast.style.opacity = '0';
-    toast.style.transition = 'opacity 0.3s';
-    setTimeout(() => toast.remove(), 300);
-  }, 2200);
+    toast.style.transition = 'opacity 0.25s ease';
+    setTimeout(() => toast.remove(), 250);
+  }, 2000);
 }
 
 function escapeHtml(str) {
@@ -717,27 +589,26 @@ function escapeHtml(str) {
   });
 }
 
-// 10. MOBILE MENU TOGGLE
+// 7. MOBILE MENU TOGGLE
 function initMobileMenu() {
   const btn = document.getElementById('mobileMenuBtn');
   const links = document.getElementById('navLinks');
   if (btn && links) {
     btn.addEventListener('click', () => {
-      links.classList.toggle('active');
+      const isOpen = links.classList.toggle('active');
+      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     });
     links.querySelectorAll('.nav-item').forEach(item => {
       item.addEventListener('click', () => {
         links.classList.remove('active');
+        btn.setAttribute('aria-expanded', 'false');
       });
     });
   }
 }
 
-// BOOTSTRAP INITIALIZATION
+// INITIALIZATION
 document.addEventListener('DOMContentLoaded', () => {
-  initMatrixCanvas();
-  initTypewriter();
-  initCounters();
   renderCertificates();
   initCertControls();
   initModal();
