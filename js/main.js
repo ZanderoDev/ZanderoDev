@@ -17,7 +17,7 @@ const CERTIFICATES = [
     image: "assets/certificates/ccep.png",
     pdf: "assets/pdf/ccep.pdf",
     verifyUrl: "https://courses.redteamleaders.com/exam-completion/a88e7bcfe3a8824f",
-    description: "Sertifikasi resmi CCEP dari Red Team Leaders. Membuktikan kompetensi di bidang edukasi keamanan siber, pemahaman simulasi serangan (ethical red teaming), dan penyampaian materi siber yang terstruktur.",
+    description: "Sertifikasi resmi CCEP dari Red Team Leaders. Bukti kompetensi di bidang edukasi keamanan siber, simulasi serangan (ethical red teaming), dan penyampaian materi teknis yang runtut.",
     tags: ["Red Teaming", "Cybersecurity Educator", "CCEP", "Offensive Security", "Exam Passed"]
   },
   {
@@ -32,7 +32,7 @@ const CERTIFICATES = [
     image: "assets/certificates/infosec.png",
     pdf: "assets/pdf/infosec.pdf",
     verifyUrl: "https://cyberacademy.id",
-    description: "Pelatihan dasar Information Security dari Cyber Army Indonesia / Cyber Academy. Mempelajari prinsip CIA Triad, pemetaan celah sistem, analisis risiko OS, dan dasar-dasar defense-in-depth.",
+    description: "Pelatihan dasar Information Security dari Cyber Army Indonesia / Cyber Academy. Bahas prinsip CIA Triad, pemetaan celah sistem, analisis risiko OS, sampai konsep defense-in-depth.",
     tags: ["Information Security", "Cyber Academy", "CIA Triad", "Defense-in-Depth"]
   },
   {
@@ -47,7 +47,7 @@ const CERTIFICATES = [
     image: "assets/certificates/pentest-vinco.png",
     pdf: "assets/pdf/pentest-vinco.pdf",
     verifyUrl: "assets/pdf/pentest-vinco.pdf",
-    description: "Sesi teknis penetration testing dari VINCO bersama Ahmad Danish Putra. Membahas alur reconnaissance, network scanning, identifikasi celah, dan konsep dasar eksploitasi terarah.",
+    description: "Sesi teknis penetration testing bareng Ahmad Danish Putra dari VINCO. Bahas tuntas alur reconnaissance, scanning jaringan, identifikasi celah, dan dasar eksploitasi terarah.",
     tags: ["Penetration Testing", "Ethical Hacking", "Vulnerability Assessment", "Recon"]
   },
   {
@@ -62,7 +62,7 @@ const CERTIFICATES = [
     image: "assets/certificates/network-aguna.png",
     pdf: "assets/pdf/network-aguna.pdf",
     verifyUrl: "https://agunacourse.com/cek-sertifikat",
-    description: "Pemahaman fundamental jaringan komputer dari Aguna Course. Menguasai alur data pada 7 OSI Layer, arsitektur protokol TCP/IP, kalkulasi subnetting (VLSM/CIDR), dan dasar routing paket data.",
+    description: "Pemahaman fundamental jaringan komputer dari Aguna Course. Kuasai alur data 7 OSI Layer, arsitektur protokol TCP/IP, kalkulasi subnetting (VLSM/CIDR), dan routing paket data.",
     tags: ["TCP/IP", "OSI Model", "Subnetting", "Routing", "Packet Flow"]
   },
   {
@@ -77,7 +77,7 @@ const CERTIFICATES = [
     image: "assets/certificates/c-dicoding.png",
     pdf: "assets/pdf/c-dicoding.pdf",
     verifyUrl: "https://www.dicoding.com/certificates/1OP8J5LEVPQK",
-    description: "Pelatihan bahasa C resmi dari Dicoding. Fokus pada manipulasi memori, pointer, alokasi memori dinamis, struktur data, dan logika penulisan kode yang efisien serta aman.",
+    description: "Pelatihan bahasa C resmi dari Dicoding. Fokus di manajemen pointer, alokasi memori dinamis, struktur data, dan penulisan kode yang efisien serta aman.",
     tags: ["C Language", "Memory Management", "Pointers", "Algorithms", "Low-Level"]
   },
   {
@@ -92,7 +92,7 @@ const CERTIFICATES = [
     image: "assets/certificates/bootstrap-skilvul.png",
     pdf: "assets/pdf/bootstrap-skilvul.pdf",
     verifyUrl: "https://skilvul.com/courses/bootstrap-5-membuat-website-landing-page",
-    description: "Kelas praktik pembuatan landing page modern dari Skilvul. Menerapkan grid system Bootstrap 5, layout flexbox responsif, komponen UI interaktif, dan standar tampilan lintas perangkat.",
+    description: "Kelas praktik bikin landing page modern dari Skilvul. Menerapkan grid Bootstrap 5, layout responsif, komponen UI interaktif, dan standar tampilan lintas layar.",
     tags: ["Bootstrap 5", "Responsive Web", "UI Design", "Frontend", "Landing Page"]
   }
 ];
@@ -119,10 +119,10 @@ function renderCertificates() {
 
   if (filtered.length === 0) {
     grid.innerHTML = `
-      <div style="grid-column: 1/-1; text-align: center; padding: 3.5rem 1.5rem; background: rgba(255, 255, 255, 0.02); border: 1px dashed var(--border-subtle); border-radius: var(--radius-lg);">
-        <i class="fa-solid fa-magnifying-glass" style="font-size: 1.75rem; color: var(--text-subtle); margin-bottom: 0.85rem; display: block;" aria-hidden="true"></i>
-        <p style="color: var(--text-main); font-weight: 500; margin-bottom: 0.35rem;">Tidak ditemukan sertifikat yang cocok.</p>
-        <p style="color: var(--text-muted); font-size: 0.875rem;">Kata kunci "${escapeHtml(searchQuery)}" tidak menghasilkan dokumen apa pun. Coba reset pencarian.</p>
+      <div style="grid-column: 1/-1; text-align: center; padding: 3.5rem 1.5rem; background: rgba(255, 255, 255, 0.02); border: 1px dashed var(--z-border-subtle); border-radius: var(--z-radius-lg);">
+        <i class="fa-solid fa-magnifying-glass" style="font-size: 1.75rem; color: var(--z-text-subtle); margin-bottom: 0.85rem; display: block;" aria-hidden="true"></i>
+        <p style="color: var(--z-text-main); font-weight: 500; margin-bottom: 0.35rem;">Sertifikat nggak ditemukan.</p>
+        <p style="color: var(--z-text-muted); font-size: 0.875rem;">Kata kunci "${escapeHtml(searchQuery)}" nggak cocok sama dokumen apa pun. Coba reset pencarian.</p>
       </div>
     `;
     return;
@@ -133,7 +133,7 @@ function renderCertificates() {
       <div class="cert-preview-wrap">
         <img src="${c.image}" alt="${escapeHtml(c.title)}" class="cert-img" loading="lazy">
         <div class="cert-overlay">
-          <span class="overlay-btn"><i class="fa-solid fa-eye" aria-hidden="true"></i> Pratinjau Dokumen</span>
+          <span class="overlay-btn"><i class="fa-solid fa-eye" aria-hidden="true"></i> Lihat Dokumen</span>
         </div>
       </div>
       <div class="cert-body">
@@ -145,7 +145,7 @@ function renderCertificates() {
         <div class="cert-issuer"><i class="fa-solid fa-building-shield" aria-hidden="true"></i> ${c.issuer}</div>
         <div class="cert-info-row">
           <span><i class="fa-regular fa-calendar" aria-hidden="true"></i> ${c.date}</span>
-          <span class="cert-id-copy" data-id-val="${c.certId}" title="Klik untuk menyalin nomor ID" role="button" tabindex="0">
+          <span class="cert-id-copy" data-id-val="${c.certId}" title="Klik buat salin ID" role="button" tabindex="0">
             <i class="fa-solid fa-fingerprint" aria-hidden="true"></i> ${c.certId.length > 14 ? c.certId.substring(0, 12) + '...' : c.certId}
           </span>
         </div>
@@ -309,16 +309,16 @@ function initVerifier() {
           <i class="fa-solid fa-circle-check" aria-hidden="true"></i> KREDENSIAL TERVERIFIKASI &amp; RESMI
         </div>
         <div class="result-cert-title">${found.title}</div>
-        <p style="color: var(--text-muted); font-size: 0.88rem;">Diterbitkan atas nama: <strong style="color: var(--text-main);">M. Ilham Mufid</strong></p>
+        <p style="color: var(--z-text-muted); font-size: 0.88rem;">Atas nama: <strong style="color: var(--z-text-main);">M. Ilham Mufid</strong></p>
         <div class="result-grid">
           <div class="result-item"><span>Lembaga Penerbit:</span> <strong>${found.issuer}</strong></div>
-          <div class="result-item"><span>Tanggal Kelulusan:</span> <strong>${found.date}</strong></div>
+          <div class="result-item"><span>Tanggal Lulus:</span> <strong>${found.date}</strong></div>
           <div class="result-item"><span>Nomor Registrasi ID:</span> <code>${found.certId}</code></div>
-          <div class="result-item"><span>Status Berkas:</span> <span style="color: var(--accent-emerald);">Dokumen PDF Tersedia</span></div>
+          <div class="result-item"><span>Status Berkas:</span> <span style="color: var(--z-accent-emerald);">Dokumen PDF Siap Unduh</span></div>
         </div>
         <div class="modal-action-row" style="margin-top: 1rem;">
           <a href="${found.verifyUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
-            <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Tautan Penerbit
+            <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Link Portal Penerbit
           </a>
           <button type="button" class="btn btn-secondary btn-sm" onclick="openModal('${found.id}')">
             Lihat Pratinjau
@@ -331,8 +331,8 @@ function initVerifier() {
         <div class="result-status-header invalid">
           <i class="fa-solid fa-circle-xmark" aria-hidden="true"></i> ID Tidak Ditemukan
         </div>
-        <p style="color: var(--text-muted); font-size: 0.88rem;">
-          ID "<code>${escapeHtml(query)}</code>" belum tercatat di repositori ini. Pastikan penulisan ID tepat atau gunakan tombol contoh di atas.
+        <p style="color: var(--z-text-muted); font-size: 0.88rem;">
+          ID "<code>${escapeHtml(query)}</code>" belum tercatat di repositori ini. Coba cek lagi ketikannya atau klik salah satu tombol contoh di atas.
         </p>
       `;
     }
@@ -379,8 +379,8 @@ function initTerminal() {
   if (clearBtn) {
     clearBtn.addEventListener('click', () => {
       screen.innerHTML = `
-        <div class="term-line output-line" style="color: var(--text-subtle);">
-          Konsol telah dibersihkan. Ketik <span class="term-highlight">help</span> untuk panduan.
+        <div class="term-line output-line" style="color: var(--z-text-subtle);">
+          Konsol udah dibersihkan. Ketik <span class="term-highlight">help</span> buat panduan.
         </div>
       `;
     });
@@ -407,43 +407,43 @@ function initTerminal() {
         break;
       case 'help':
         printLine(`
-          <div style="color: var(--text-main); font-weight: 600; margin-bottom: 0.35rem;">Daftar Perintah Shell:</div>
-          <div>  <span class="term-highlight">whoami</span>       : Profil teknis dan peran spesialisasi</div>
+          <div style="color: var(--z-text-main); font-weight: 600; margin-bottom: 0.35rem;">Daftar Perintah Shell:</div>
+          <div>  <span class="term-highlight">whoami</span>       : Profil singkat dan peran spesialisasi</div>
           <div>  <span class="term-highlight">certs</span> / <span class="term-highlight">ls</span>  : Tampilkan 6 sertifikasi resmi</div>
           <div>  <span class="term-highlight">skills</span>      : Matriks keahlian dan perkakas keamanan</div>
           <div>  <span class="term-highlight">verify [id]</span>  : Periksa validitas nomor ID sertifikat</div>
           <div>  <span class="term-highlight">cat [slug]</span>   : Baca detail kredensial (contoh: cat ccep)</div>
-          <div>  <span class="term-highlight">contact</span>     : Informasi kontak dan email resmi</div>
+          <div>  <span class="term-highlight">contact</span>     : Info kontak dan email</div>
           <div>  <span class="term-highlight">clear</span>       : Bersihkan layar konsol</div>
         `);
         break;
 
       case 'whoami':
         printLine(`
-          <div style="color: var(--text-main); font-weight: 600;">M. Ilham Mufid</div>
+          <div style="color: var(--z-text-main); font-weight: 600;">M. Ilham Mufid</div>
           <div>Gelar &amp; Kredensial: Certified Cybersecurity Educator Professional (CCEP)</div>
-          <div>Bidang: Offensive Security, Network Protocols (TCP/IP), C Systems Development, Responsive Web</div>
-          <div>Fokus: Riset keamanan siber, simulasi red teaming, dan edukasi teknis terstruktur.</div>
+          <div>Bidang: Offensive Security, Protokol Jaringan (TCP/IP), Rekayasa Sistem C, Web Responsif</div>
+          <div>Aktivitas: Eksplorasi keamanan siber, simulasi red teaming, dan edukasi teknis yang mudah dipahami.</div>
         `);
         break;
 
       case 'certs':
       case 'ls':
         printLine(`
-          <div style="color: var(--text-main); font-weight: 600; margin-bottom: 0.35rem;">Total 6 Kredensial Resmi Terdaftar:</div>
+          <div style="color: var(--z-text-main); font-weight: 600; margin-bottom: 0.35rem;">Total 6 Kredensial Resmi Terdaftar:</div>
           ${CERTIFICATES.map((c, i) => `
-            <div>[${i + 1}] <strong style="color: var(--text-main);">${c.title}</strong></div>
-            <div style="color: var(--text-muted); margin-left: 1.5rem; margin-bottom: 0.3rem;">
-              Penerbit: ${c.issuer} | ID: <code>${c.certId}</code> | Slug: <span style="color: var(--accent-cyan);">${c.id}</span>
+            <div>[${i + 1}] <strong style="color: var(--z-text-main);">${c.title}</strong></div>
+            <div style="color: var(--z-text-muted); margin-left: 1.5rem; margin-bottom: 0.3rem;">
+              Penerbit: ${c.issuer} | ID: <code>${c.certId}</code> | Slug: <span style="color: var(--z-accent-cyan);">${c.id}</span>
             </div>
           `).join('')}
-          <div style="color: var(--text-subtle); margin-top: 0.4rem;">Ketik <code>cat [slug]</code> untuk membaca deskripsi lengkap.</div>
+          <div style="color: var(--z-text-subtle); margin-top: 0.4rem;">Ketik <code>cat [slug]</code> buat baca deskripsi lengkapnya.</div>
         `);
         break;
 
       case 'skills':
         printLine(`
-          <div style="color: var(--text-main); font-weight: 600; margin-bottom: 0.3rem;">Keahlian Teknis &amp; Tooling:</div>
+          <div style="color: var(--z-text-main); font-weight: 600; margin-bottom: 0.3rem;">Keahlian Teknis &amp; Tooling:</div>
           <div>- <strong>Offensive &amp; Pentest:</strong> Vulnerability Assessment, Reconnaissance, Nmap, Burp Suite, Metasploit</div>
           <div>- <strong>Defensive &amp; InfoSec:</strong> CCEP Educator, CIA Triad, Threat Modeling, Hardening Linux</div>
           <div>- <strong>Jaringan &amp; Protokol:</strong> Model 7 OSI, TCP/IP, Subnetting CIDR/VLSM, Wireshark Packet Analysis</div>
@@ -458,15 +458,15 @@ function initTerminal() {
           const found = CERTIFICATES.find(c => c.id === arg || c.certId.toLowerCase() === arg);
           if (found) {
             printLine(`
-              <div style="color: var(--text-main); font-weight: 600;">${found.title}</div>
+              <div style="color: var(--z-text-main); font-weight: 600;">${found.title}</div>
               <div>Penerbit: ${found.issuer}</div>
-              <div>Tanggal: ${found.date}</div>
+              <div>Tanggal Lulus: ${found.date}</div>
               <div>Credential ID: <code>${found.certId}</code></div>
               <div>Rincian: ${found.description}</div>
               <div>Kategori: ${found.categoryLabel}</div>
             `);
           } else {
-            printLine(`<span style="color: var(--accent-red);">Slug atau ID "${escapeHtml(arg)}" tidak ditemukan. Ketik <code>ls</code> untuk melihat daftar.</span>`);
+            printLine(`<span style="color: var(--z-accent-red);">Slug atau ID "${escapeHtml(arg)}" nggak ketemu. Ketik <code>ls</code> buat lihat daftar.</span>`);
           }
         }
         break;
@@ -478,23 +478,23 @@ function initTerminal() {
           const found = CERTIFICATES.find(c => c.certId.toLowerCase().includes(arg) || c.id === arg);
           if (found) {
             printLine(`
-              <div style="color: var(--accent-emerald); font-weight: 600;"><i class="fa-solid fa-check" aria-hidden="true"></i> VALID &amp; RESMI</div>
+              <div style="color: var(--z-accent-emerald); font-weight: 600;"><i class="fa-solid fa-check" aria-hidden="true"></i> VALID &amp; RESMI</div>
               <div>Judul: <strong>${found.title}</strong></div>
               <div>Penerbit: ${found.issuer} | Tanggal: ${found.date}</div>
-              <div>Tautan Verifikasi: <a href="${found.verifyUrl}" target="_blank" style="color: var(--accent-cyan);">${found.verifyUrl}</a></div>
+              <div>Tautan Verifikasi: <a href="${found.verifyUrl}" target="_blank" style="color: var(--z-accent-cyan);">${found.verifyUrl}</a></div>
             `);
           } else {
-            printLine(`<span style="color: var(--accent-red);"><i class="fa-solid fa-xmark" aria-hidden="true"></i> ID "${escapeHtml(arg)}" tidak terdaftar dalam repositori.</span>`);
+            printLine(`<span style="color: var(--z-accent-red);"><i class="fa-solid fa-xmark" aria-hidden="true"></i> ID "${escapeHtml(arg)}" belum tercatat dalam repositori ini.</span>`);
           }
         }
         break;
 
       case 'contact':
         printLine(`
-          <div style="color: var(--text-main); font-weight: 600;">Kontak M. Ilham Mufid:</div>
-          <div>Email: <a href="mailto:xzvdeveloper@gmail.com" style="color: var(--accent-cyan);">xzvdeveloper@gmail.com</a></div>
-          <div>GitHub: <a href="https://github.com/ZanderoDev" target="_blank" style="color: var(--accent-cyan);">github.com/ZanderoDev</a></div>
-          <div>LinkedIn: <a href="https://linkedin.com/in/m-ilham-mufid" target="_blank" style="color: var(--accent-cyan);">linkedin.com/in/m-ilham-mufid</a></div>
+          <div style="color: var(--z-text-main); font-weight: 600;">Kontak M. Ilham Mufid:</div>
+          <div>Email: <a href="mailto:xzvdeveloper@gmail.com" style="color: var(--z-accent-cyan);">xzvdeveloper@gmail.com</a></div>
+          <div>GitHub: <a href="https://github.com/ZanderoDev" target="_blank" style="color: var(--z-accent-cyan);">github.com/ZanderoDev</a></div>
+          <div>LinkedIn: <a href="https://linkedin.com/in/m-ilham-mufid" target="_blank" style="color: var(--z-accent-cyan);">linkedin.com/in/m-ilham-mufid</a></div>
         `);
         break;
 
@@ -503,7 +503,7 @@ function initTerminal() {
         break;
 
       default:
-        printLine(`Perintah tidak dikenal: "<code>${escapeHtml(cmdRaw)}</code>". Ketik <span class="term-highlight">help</span> untuk panduan.`);
+        printLine(`Perintah nggak dikenal: "<code>${escapeHtml(cmdRaw)}</code>". Ketik <span class="term-highlight">help</span> buat panduan.`);
         break;
     }
   }
